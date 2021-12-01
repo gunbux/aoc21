@@ -4,15 +4,15 @@ with open('1.txt') as input:
 
     count = 0
     ## Part 1
-    ## for t in enumerate(g):
-    ##     p = t[0]
-    ##     i = t[1]
-    ##     if p - 1 < 0:
-    ##         continue
-    ##     if g[p] > g[p - 1]:
-    ##         count += 1
+    for t in enumerate(g):
+        p = t[0]
+        i = t[1]
+        if p - 1 < 0:
+            continue
+        if g[p] > g[p - 1]:
+            count += 1
 
-    ## print(count)
+    print(count)
 
     ## Part 2
 
