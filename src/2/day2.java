@@ -13,17 +13,61 @@ public class day2 {
         int count = 0;
         io.println(count);
 
+//        Part 1
+//        try {
+//            File f = new File("C:\\Users\\lamch\\Repo\\aoc21\\src\\2\\2.txt");
+//            Scanner myReader = new Scanner(f);
+//            int[] res = new int[]{0, 0};
+//            while (myReader.hasNextLine()) {
+//                String i  = myReader.nextLine();
+//                String[] s = i.split("\\s+");
+//                String d = s[0];
+//                int c = Integer.parseInt(s[1]);
+//                if (d.equals("forward")) {
+//                    res[0] += c;
+//                }
+//                if (d.equals("down")) {
+//                    res[1] += c;
+//                }
+//                if (d.equals("up")) {
+//                    res[1] -= c;
+//                }
+////                io.println(s[0]);
+//            }
+//            io.println("result is: " + String.valueOf(res[0] * res[1]));
+//            myReader.close();
+//        } catch (FileNotFoundException e) {
+//            io.println("error");
+//        }
+
+//        Part 2
         try {
-            File f = new File("C:\\Users\\lamch\\Repo\\aoc21\\src\\1\\1.txt");
+            File f = new File("C:\\Users\\lamch\\Repo\\aoc21\\src\\2\\2.txt");
             Scanner myReader = new Scanner(f);
+            int[] res = new int[]{0, 0, 0};
             while (myReader.hasNextLine()) {
                 String i  = myReader.nextLine();
-                io.println(i);
+                String[] s = i.split("\\s+");
+                String d = s[0];
+                int c = Integer.parseInt(s[1]);
+                if (d.equals("forward")) {
+                    res[0] += c;
+                    res[1] += res[2] * c;
+                }
+                if (d.equals("down")) {
+                    res[2] += c;
+                }
+                if (d.equals("up")) {
+                    res[2] -= c;
+                }
+//                io.println(s[0]);
             }
+            io.println("part 2 result is: " + String.valueOf(res[0] * res[1]));
             myReader.close();
         } catch (FileNotFoundException e) {
             io.println("error");
         }
+
 
         io.flush();
     }
